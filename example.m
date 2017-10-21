@@ -2,7 +2,7 @@
 img1 = imread('153.bmp');
 img2 = imread('153_6.jpg');
 
-%% NR
+%% NIQE
 
  load modelparameters.mat
  
@@ -11,10 +11,10 @@ img2 = imread('153_6.jpg');
  blockrowoverlap = 0;
  blockcoloverlap = 0;
 
-NR = computequality(img1,blocksizerow,blocksizecol,blockrowoverlap,blockcoloverlap, ...
+niqe = computequality(img1,blocksizerow,blocksizecol,blockrowoverlap,blockcoloverlap, ...
     mu_prisparam,cov_prisparam);
 
-%% FR
+%% MS-SSIM
 
 img1 = double(rgb2gray(img1));
 img2 = double(rgb2gray(img2));
@@ -27,16 +27,11 @@ level = 5;
 weight = [0.0448 0.2856 0.3001 0.2363 0.1333];
 method = 'product';
 
-FR = ssim_mscale_new(img1, img2, K, window, level, weight, 'product');
+msssim = ssim_mscale_new(img1, img2, K, window, level, weight, 'product');
 
 
-%% SCQI
+%% 2stepQA
 
-Flag = 0;
 
-beta_h_FR = 1;
-beta_l_FR = 0.88;
-beta_h_NR = 10;
-
-score = SCQI(Flag, FR, NR, beta_h_FR, beta_l_FR, beta_h_NR)
+score = stepQA(msssim, niqe)
 
