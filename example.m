@@ -1,37 +1,16 @@
+clear
+close all
+clc
 
-img1 = imread('153.bmp');
-img2 = imread('153_6.jpg');
+%% add to path necessary files
+addpath(genpath('Function'))
+addpath(genpath('Example_image'))
 
-%% NIQE
-
- load modelparameters.mat
- 
- blocksizerow    = 96;
- blocksizecol    = 96;
- blockrowoverlap = 0;
- blockcoloverlap = 0;
-
-niqe = computequality(img1,blocksizerow,blocksizecol,blockrowoverlap,blockcoloverlap, ...
-    mu_prisparam,cov_prisparam);
-
-%% MS-SSIM
-
-img1 = double(rgb2gray(img1));
-img2 = double(rgb2gray(img2));
-
-K = [0.01 0.03];
-winsize = 11;
-sigma = 1.5;
-window = fspecial('gaussian', winsize, sigma);
-level = 5;
-weight = [0.0448 0.2856 0.3001 0.2363 0.1333];
-method = 'product';
-
-msssim = ssim_mscale_new(img1, img2, K, window, level, weight, 'product');
-
+%% Input reference image and its distorted version
+ref = imread('153.bmp');
+dis = imread('153_6.jpg');
 
 %% 2stepQA
 
-
-score = stepQA(msssim, niqe)
+two_stepQA = two_stepQA(ref, dis)
 
