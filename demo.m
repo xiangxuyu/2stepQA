@@ -3,8 +3,8 @@ close all
 clc
 
 %% add to path necessary files
-addpath(genpath('Function'))
-addpath(genpath('Example_image'))
+addpath(genpath('Functions'))
+addpath(genpath('Example_images'))
 
 %% Input reference image and its distorted version
 ref = imread('153.bmp');
