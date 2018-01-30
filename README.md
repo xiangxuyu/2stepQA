@@ -8,7 +8,7 @@ Copyright (c) 2017 The University of Texas at Austin
 
 All rights reserved.Permission is hereby granted, without written agreement and without license or royalty fees, to use, copy, modify, and distribute this code (the source files) and its documentation for any purpose, provided that the copyright notice in its entirety appear in all copies of this code, and the original source of this code, Laboratory for Image and Video Engineering (LIVE, http://live.ece.utexas.edu) and Center for Perceptual Systems (CPS, http://www.cps.utexas.edu) at the University of Texas at Austin (UT Austin, http://www.utexas.edu), is acknowledged in any publication that reports research using this code. The research is to be cited in the bibliography as:
 
-1)  X. Yu, C. G. Bampis, P. Gupta and A. C. Bovik "Predicting Encoded Picture Quality in Two Steps is a Better Way," in IEEE Signal Processing Letters
+1)  X. Yu, C. G. Bampis, P. Gupta and A. C. Bovik "Predicting Encoded Picture Quality in Two Steps is a Better Way," in arXiv
 2)  X. Yu, C. G. Bampis, Praful Gupta and A. C. Bovik, "2stepQA Software Release" 
 URL: http://live.ece.utexas.edu/research/quality/2stepQA_release.zip, 2017
 
